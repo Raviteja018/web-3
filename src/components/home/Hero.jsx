@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         {/* Right Content - Dynamic Tech Graphic with Animated AI Neural Core */}
-        <div className="relative w-full max-w-[450px] aspect-square mx-auto lg:max-w-none lg:h-[600px] lg:aspect-auto flex items-center justify-center mt-12 lg:mt-0">
+        <div className="relative w-full max-w-[450px] aspect-square mx-auto lg:max-w-none lg:h-[600px] lg:aspect-auto flex items-center justify-center mt-2 lg:mt-0">
 
           {/* Ambient Background Glowing Orbs */}
           <div className="absolute w-[400px] h-[400px] bg-brand-primary/15 rounded-full blur-[100px] animate-pulse-soft z-0" />
@@ -75,7 +75,7 @@ export default function Hero() {
             <circle cx="250" cy="250" r="140" fill="url(#aiCoreGlow)" />
 
             {/* Animated Synaptic Connection Lines to Cards */}
-            <g className="hidden lg:block">
+            <g>
               {/* Connection Line to Uptime Card (Top-Left: 80, 120) */}
               <motion.path 
                 d="M 250 250 Q 150 160 80 120" 
@@ -214,7 +214,7 @@ export default function Hero() {
 
           {/* Floating Card 1: Performance */}
           <motion.div 
-            className="absolute top-[15%] left-[5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
+            className="absolute top-[15%] left-[5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-xl lg:rounded-2xl p-2 pr-4 lg:p-4 lg:pr-8 shadow-2xl z-20 flex items-center gap-2 lg:gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
@@ -222,18 +222,18 @@ export default function Hero() {
               scale: { duration: 0.2 }
             }}
           >
-            <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-              <Activity size={24} className="animate-pulse" />
+            <div className="w-9 h-9 lg:w-14 lg:h-14 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)] flex-shrink-0">
+              <Activity className="w-5 h-5 lg:w-6 lg:h-6 animate-pulse" />
             </div>
             <div>
-              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Uptime</p>
-              <p className="text-2xl font-black text-white">99.99%</p>
+              <p className="text-[0.55rem] lg:text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Uptime</p>
+              <p className="text-sm lg:text-2xl font-black text-white">99.99%</p>
             </div>
           </motion.div>
 
           {/* Floating Card 2: Security */}
           <motion.div 
-            className="absolute bottom-[15%] left-[10%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
+            className="absolute bottom-[15%] left-[10%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-xl lg:rounded-2xl p-2 pr-4 lg:p-4 lg:pr-8 shadow-2xl z-20 flex items-center gap-2 lg:gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
@@ -241,18 +241,18 @@ export default function Hero() {
               scale: { duration: 0.2 }
             }}
           >
-            <div className="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-              <CheckCircle2 size={24} />
+            <div className="w-9 h-9 lg:w-14 lg:h-14 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.2)] flex-shrink-0">
+              <CheckCircle2 className="w-5 h-5 lg:w-6 lg:h-6" />
             </div>
             <div>
-              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Security</p>
-              <p className="text-2xl font-black text-white">Bank-Grade</p>
+              <p className="text-[0.55rem] lg:text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Security</p>
+              <p className="text-sm lg:text-2xl font-black text-white">Bank-Grade</p>
             </div>
           </motion.div>
 
           {/* Floating Card 3: Payments */}
           <motion.div 
-            className="absolute top-[40%] right-0 lg:right-[-5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
+            className="absolute top-[40%] right-0 lg:right-[-5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-xl lg:rounded-2xl p-2 pr-4 lg:p-4 lg:pr-8 shadow-2xl z-20 flex items-center gap-2 lg:gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
@@ -260,12 +260,12 @@ export default function Hero() {
               scale: { duration: 0.2 }
             }}
           >
-            <div className="w-14 h-14 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary shadow-[0_0_20px_rgba(249,112,9,0.2)]">
-              <CreditCard size={24} />
+            <div className="w-9 h-9 lg:w-14 lg:h-14 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary shadow-[0_0_20px_rgba(249,112,9,0.2)] flex-shrink-0">
+              <CreditCard className="w-5 h-5 lg:w-6 lg:h-6" />
             </div>
             <div>
-              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Transactions</p>
-              <p className="text-2xl font-black text-white">Seamless</p>
+              <p className="text-[0.55rem] lg:text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Transactions</p>
+              <p className="text-sm lg:text-2xl font-black text-white">Seamless</p>
             </div>
           </motion.div>
 
