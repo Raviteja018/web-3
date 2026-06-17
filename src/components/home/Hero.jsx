@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         {/* Right Content - Dynamic Tech Graphic with Animated AI Neural Core */}
-        <div className="relative w-full h-[600px] max-lg:hidden flex items-center justify-center">
+        <div className="relative w-full max-w-[450px] aspect-square mx-auto lg:max-w-none lg:h-[600px] lg:aspect-auto flex items-center justify-center mt-12 lg:mt-0">
 
           {/* Ambient Background Glowing Orbs */}
           <div className="absolute w-[400px] h-[400px] bg-brand-primary/15 rounded-full blur-[100px] animate-pulse-soft z-0" />
@@ -75,41 +75,43 @@ export default function Hero() {
             <circle cx="250" cy="250" r="140" fill="url(#aiCoreGlow)" />
 
             {/* Animated Synaptic Connection Lines to Cards */}
-            {/* Connection Line to Uptime Card (Top-Left: 80, 120) */}
-            <motion.path 
-              d="M 250 250 Q 150 160 80 120" 
-              stroke="url(#primaryPathGrad)" 
-              strokeWidth="2" 
-              fill="none" 
-              strokeDasharray="6,6"
-              animate={{ strokeDashoffset: [0, -24] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-            />
-            <circle cx="80" cy="120" r="3.5" fill="#f97009" className="animate-ping" style={{ transformOrigin: '80px 120px' }} />
+            <g className="hidden lg:block">
+              {/* Connection Line to Uptime Card (Top-Left: 80, 120) */}
+              <motion.path 
+                d="M 250 250 Q 150 160 80 120" 
+                stroke="url(#primaryPathGrad)" 
+                strokeWidth="2" 
+                fill="none" 
+                strokeDasharray="6,6"
+                animate={{ strokeDashoffset: [0, -24] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+              />
+              <circle cx="80" cy="120" r="3.5" fill="#f97009" className="animate-ping" style={{ transformOrigin: '80px 120px' }} />
 
-            {/* Connection Line to Security Card (Bottom-Left: 100, 380) */}
-            <motion.path 
-              d="M 250 250 Q 160 320 100 380" 
-              stroke="url(#primaryPathGrad)" 
-              strokeWidth="2" 
-              fill="none" 
-              strokeDasharray="6,6"
-              animate={{ strokeDashoffset: [0, 24] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
-            />
-            <circle cx="100" cy="380" r="3.5" fill="#10B981" className="animate-ping" style={{ transformOrigin: '100px 380px' }} />
+              {/* Connection Line to Security Card (Bottom-Left: 100, 380) */}
+              <motion.path 
+                d="M 250 250 Q 160 320 100 380" 
+                stroke="url(#primaryPathGrad)" 
+                strokeWidth="2" 
+                fill="none" 
+                strokeDasharray="6,6"
+                animate={{ strokeDashoffset: [0, 24] }}
+                transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+              />
+              <circle cx="100" cy="380" r="3.5" fill="#10B981" className="animate-ping" style={{ transformOrigin: '100px 380px' }} />
 
-            {/* Connection Line to Transactions Card (Middle-Right: 420, 240) */}
-            <motion.path 
-              d="M 250 250 Q 350 230 420 240" 
-              stroke="url(#accentPathGrad)" 
-              strokeWidth="2" 
-              fill="none" 
-              strokeDasharray="6,6"
-              animate={{ strokeDashoffset: [0, -24] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-            />
-            <circle cx="420" cy="240" r="3.5" fill="#f7d272" className="animate-ping" style={{ transformOrigin: '420px 240px' }} />
+              {/* Connection Line to Transactions Card (Middle-Right: 420, 240) */}
+              <motion.path 
+                d="M 250 250 Q 350 230 420 240" 
+                stroke="url(#accentPathGrad)" 
+                strokeWidth="2" 
+                fill="none" 
+                strokeDasharray="6,6"
+                animate={{ strokeDashoffset: [0, -24] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+              />
+              <circle cx="420" cy="240" r="3.5" fill="#f7d272" className="animate-ping" style={{ transformOrigin: '420px 240px' }} />
+            </g>
 
             {/* Concentric rotating telemetry ring (outer) */}
             <motion.g 
@@ -192,7 +194,7 @@ export default function Hero() {
 
           {/* Orbiting Ring 1 (Inner Orbit with blue node) */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-800/40 rounded-full z-10 pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] max-w-[350px] aspect-square border border-slate-800/40 rounded-full z-10 pointer-events-none"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
@@ -202,7 +204,7 @@ export default function Hero() {
 
           {/* Orbiting Ring 2 (Outer Orbit with brand-primary node) */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-800/20 rounded-full z-10 pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[98%] max-w-[490px] aspect-square border border-slate-800/20 rounded-full z-10 pointer-events-none"
             animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
@@ -212,7 +214,7 @@ export default function Hero() {
 
           {/* Floating Card 1: Performance */}
           <motion.div 
-            className="absolute top-[15%] left-[5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            className="absolute top-[15%] left-[5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
@@ -231,7 +233,7 @@ export default function Hero() {
 
           {/* Floating Card 2: Security */}
           <motion.div 
-            className="absolute bottom-[15%] left-[10%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            className="absolute bottom-[15%] left-[10%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
@@ -250,7 +252,7 @@ export default function Hero() {
 
           {/* Floating Card 3: Payments */}
           <motion.div 
-            className="absolute top-[40%] right-[-5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            className="absolute top-[40%] right-0 lg:right-[-5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 hidden lg:flex items-center gap-4 cursor-pointer select-none"
             whileHover={{ scale: 1.05, y: -5 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ 
