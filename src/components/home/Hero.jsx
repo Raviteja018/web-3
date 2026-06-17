@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Very subtle background grid for texture */}
       <div className="absolute inset-0 pointer-events-none [background-image:linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] [background-size:40px_40px]" />
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 sm:px-12 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
 
         {/* Left Content - Sharp, Minimal Typography */}
         <div className="flex flex-col items-start max-lg:items-center max-lg:text-center animate-fade-in-up">
@@ -17,7 +17,7 @@ export default function Hero() {
             WorldTek Innovations Pvt. Ltd.
           </div>
 
-          <h1 className="text-[3.2rem] sm:text-[4rem] lg:text-[4.5rem] font-black leading-[1.05] text-white mb-6 tracking-tight uppercase">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black leading-[1.05] text-white mb-6 tracking-tight uppercase">
             Empowering <br className="hidden lg:block" /> businesses with <br className="hidden lg:block" /> <span className="text-brand-primary relative">WORLDTEK.
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-accent/50" viewBox="0 0 100 20" preserveAspectRatio="none">
                 <path d="M0,10 Q50,20 100,0" stroke="currentColor" strokeWidth="8" fill="none" />
@@ -25,7 +25,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-medium leading-relaxed">
+          <p className="text-base md:text-lg text-slate-300 mb-10 max-w-xl font-medium leading-relaxed">
             Where Innovation Knows No Bounds. At <span className="text-brand-primary font-bold">WorldTek</span>, we're not just another tech company – we're pioneers, visionaries, and dreamers. We believe in pushing the boundaries of what's possible and redefining the future of technology.
           </p>
 
