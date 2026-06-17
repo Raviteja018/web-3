@@ -1,222 +1,275 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight, ShieldCheck, Activity, Cpu } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { ArrowRight, CheckCircle2, PlayCircle, BarChart3, Users, CreditCard, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-dark-navy text-white">
-      {/* Background Image with Dark Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80')`
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-dark-navy/95 via-dark-navy/80 to-transparent z-10" />
+    <section className="relative min-h-screen flex items-center justify-center bg-[#0B1120] overflow-hidden pt-28 pb-16" id="home">
 
-      {/* Grid Pattern overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] z-10" />
+      {/* Very subtle background grid for texture */}
+      <div className="absolute inset-0 pointer-events-none [background-image:linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] [background-size:40px_40px]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 pt-12 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Hero Content */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
+
+        {/* Left Content - Sharp, Minimal Typography */}
+        <div className="flex flex-col items-start max-lg:items-center max-lg:text-center animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/5 text-brand-primary border border-brand-primary/10 rounded-full font-bold text-xs uppercase tracking-widest mb-8">
+            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+            WorldTek Innovations Pvt. Ltd.
+          </div>
+
+          <h1 className="text-[3.2rem] sm:text-[4rem] lg:text-[4.5rem] font-black leading-[1.05] text-white mb-6 tracking-tight uppercase">
+            Empowering <br className="hidden lg:block" /> businesses with <br className="hidden lg:block" /> <span className="text-brand-primary relative">WORLDTEK.
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-accent/50" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,10 Q50,20 100,0" stroke="currentColor" strokeWidth="8" fill="none" />
+              </svg>
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-medium leading-relaxed">
+            Where Innovation Knows No Bounds. At <span className="text-brand-primary font-bold">WorldTek</span>, we're not just another tech company – we're pioneers, visionaries, and dreamers. We believe in pushing the boundaries of what's possible and redefining the future of technology.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-[1rem] rounded-xl bg-brand-primary text-white shadow-lg shadow-brand-primary/20 transition-all hover:bg-brand-secondary hover:-translate-y-0.5"
+            >
+              Start Building <ArrowRight size={20} />
+            </a>
+            <a
+              href="#about"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-[1rem] rounded-xl bg-slate-800 text-white border-2 border-slate-700 transition-all hover:border-slate-600 hover:bg-slate-700"
+            >
+              <PlayCircle size={20} className="text-brand-primary" /> Learn More
+            </a>
+          </div>
+
+        </div>
+
+        {/* Right Content - Dynamic Tech Graphic with Animated AI Neural Core */}
+        <div className="relative w-full h-[600px] max-lg:hidden flex items-center justify-center">
+
+          {/* Ambient Background Glowing Orbs */}
+          <div className="absolute w-[400px] h-[400px] bg-brand-primary/15 rounded-full blur-[100px] animate-pulse-soft z-0" />
+          <div className="absolute w-[300px] h-[300px] bg-brand-accent/10 rounded-full blur-[80px] animate-pulse-soft z-0 delay-1000" />
+
+          {/* SVG AI Neural Network Connections & Concentric Rings */}
+          <svg viewBox="0 0 500 500" className="absolute inset-0 w-full h-full z-0 select-none pointer-events-none">
+            <defs>
+              <radialGradient id="aiCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#f97009" stopOpacity="0.45" />
+                <stop offset="70%" stopColor="#e65c00" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#0B1120" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id="primaryPathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f97009" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#f7d272" stopOpacity="0.1" />
+              </linearGradient>
+              <linearGradient id="accentPathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f7d272" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#e65c00" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+
+            {/* Glowing core backdrop */}
+            <circle cx="250" cy="250" r="140" fill="url(#aiCoreGlow)" />
+
+            {/* Animated Synaptic Connection Lines to Cards */}
+            {/* Connection Line to Uptime Card (Top-Left: 80, 120) */}
+            <motion.path 
+              d="M 250 250 Q 150 160 80 120" 
+              stroke="url(#primaryPathGrad)" 
+              strokeWidth="2" 
+              fill="none" 
+              strokeDasharray="6,6"
+              animate={{ strokeDashoffset: [0, -24] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+            />
+            <circle cx="80" cy="120" r="3.5" fill="#f97009" className="animate-ping" style={{ transformOrigin: '80px 120px' }} />
+
+            {/* Connection Line to Security Card (Bottom-Left: 100, 380) */}
+            <motion.path 
+              d="M 250 250 Q 160 320 100 380" 
+              stroke="url(#primaryPathGrad)" 
+              strokeWidth="2" 
+              fill="none" 
+              strokeDasharray="6,6"
+              animate={{ strokeDashoffset: [0, 24] }}
+              transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+            />
+            <circle cx="100" cy="380" r="3.5" fill="#10B981" className="animate-ping" style={{ transformOrigin: '100px 380px' }} />
+
+            {/* Connection Line to Transactions Card (Middle-Right: 420, 240) */}
+            <motion.path 
+              d="M 250 250 Q 350 230 420 240" 
+              stroke="url(#accentPathGrad)" 
+              strokeWidth="2" 
+              fill="none" 
+              strokeDasharray="6,6"
+              animate={{ strokeDashoffset: [0, -24] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+            />
+            <circle cx="420" cy="240" r="3.5" fill="#f7d272" className="animate-ping" style={{ transformOrigin: '420px 240px' }} />
+
+            {/* Concentric rotating telemetry ring (outer) */}
+            <motion.g 
+              animate={{ rotate: 360 }} 
+              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+              style={{ transformOrigin: "250px 250px" }}
+            >
+              <circle cx="250" cy="250" r="130" stroke="#f97009" strokeWidth="1" strokeDasharray="5,20" fill="none" opacity="0.35" />
+              <circle cx="250" cy="250" r="115" stroke="#f7d272" strokeWidth="1.25" strokeDasharray="15,45" fill="none" opacity="0.5" />
+              <circle cx="380" cy="250" r="4.5" fill="#f97009" />
+              <circle cx="120" cy="250" r="4.5" fill="#f7d272" />
+            </motion.g>
+
+            {/* Core tech ring (inner) */}
+            <motion.g 
+              animate={{ rotate: -360 }} 
+              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+              style={{ transformOrigin: "250px 250px" }}
+            >
+              <circle cx="250" cy="250" r="80" stroke="#f97009" strokeWidth="1.5" strokeDasharray="12,12" fill="none" opacity="0.6" />
+              <circle cx="250" cy="170" r="4" fill="#f97009" />
+              <circle cx="250" cy="330" r="4" fill="#f7d272" />
+            </motion.g>
+
+            {/* Diagnostic Expanding Scan Waves */}
+            <motion.circle 
+              cx="250" 
+              cy="250" 
+              r="170" 
+              stroke="#f97009" 
+              strokeWidth="0.75" 
+              fill="none" 
+              animate={{ scale: [0.25, 1], opacity: [0.8, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeOut" }}
+            />
+            <motion.circle 
+              cx="250" 
+              cy="250" 
+              r="170" 
+              stroke="#f7d272" 
+              strokeWidth="0.5" 
+              fill="none" 
+              animate={{ scale: [0.25, 1], opacity: [0.6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, delay: 2, ease: "easeOut" }}
+            />
+          </svg>
+
+          {/* Central AI Core Element */}
           <motion.div 
-            className="lg:col-span-8 space-y-6 text-left"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-slate-900/80 border border-slate-700/50 rounded-full shadow-[0_0_50px_rgba(0,0,0,0.5)] flex items-center justify-center z-10 backdrop-blur-xl cursor-pointer"
+            whileHover={{ scale: 1.08 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            {/* Subtitle */}
+            {/* Spinning active loading segment */}
             <motion.div 
-              variants={itemVariants}
-              className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm sm:text-base uppercase"
-            >
-              <span>Innovation • Development • Digital Transformation</span>
-            </motion.div>
-
-            {/* Title */}
-            <motion.h1 
-              variants={itemVariants}
-              className="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight"
-            >
-              Empowering Businesses <br />
-              Through <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">WorldTek</span> Technology
-            </motion.h1>
-
-            {/* Description */}
-            <motion.p 
-              variants={itemVariants}
-              className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-sans"
-            >
-              Delivering innovative digital solutions that help businesses grow, transform, and succeed in a rapidly evolving digital world.
-            </motion.p>
-
-            {/* CTAs */}
+              className="absolute inset-0 rounded-full border-2 border-brand-primary/20 border-t-brand-primary"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+            />
+            {/* Counter-spinning second segment */}
             <motion.div 
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
-            >
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-glow hover:-translate-y-0.5 group"
-              >
-                <span>Explore More</span>
-                <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center text-white hover:text-primary font-bold px-4 py-3 text-base relative after:content-[''] after:absolute after:bottom-1.5 after:left-4 after:right-4 after:h-[1px] after:bg-white/40 hover:after:bg-primary transition-colors duration-300"
-              >
-                View All Services
-              </Link>
-            </motion.div>
+              className="absolute inset-2 rounded-full border border-dashed border-brand-accent/20 border-t-brand-accent"
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+            />
+            
+            {/* Glowing Core center */}
+            <div className="w-24 h-24 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent rounded-full shadow-[0_0_40px_rgba(249,112,9,0.6)] flex flex-col items-center justify-center text-white relative overflow-hidden group">
+              <Activity size={32} className="text-white relative z-10 group-hover:scale-110 transition-transform duration-300" strokeWidth={2} />
+              <span className="text-[9px] font-black tracking-widest uppercase mt-1 relative z-10 select-none">AI CORE</span>
+              
+              {/* Core light sweep */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+                animate={{ translateX: ["100%", "-100%"] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              />
+            </div>
           </motion.div>
 
-          {/* Floating AI Cognitive Neural Panel in Right Column */}
+          {/* Orbiting Ring 1 (Inner Orbit with blue node) */}
           <motion.div 
-            className="lg:col-span-4 relative h-[380px] w-full flex items-center justify-center lg:justify-end mt-12 lg:mt-0"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-800/40 rounded-full z-10 pointer-events-none"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
-            {/* Ambient Background Glowing Orb */}
-            <div className="absolute w-72 h-72 rounded-full bg-primary/25 blur-[90px] z-0 animate-pulse pointer-events-none" />
+            {/* Orbit Node */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.8)] border-2 border-white/25" />
+          </motion.div>
 
-            {/* Visual Card 1: AI Agent Monitor */}
-            <motion.div
-              className="absolute top-4 left-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 w-56 shadow-2xl flex items-center space-x-3 z-20 backdrop-blur-sm select-none"
-              animate={{ 
-                y: [0, -12, 0],
-                x: [0, 6, 0]
-              }}
-              transition={{ 
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center relative">
-                <Cpu className="w-5 h-5 animate-pulse" />
-                <span className="absolute top-0 right-0 w-2 h-2 rounded-full bg-primary border border-slate-900 animate-ping" />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Cognitive Engine</h4>
-                <p className="text-sm font-display font-black text-white">AI Agent Active</p>
-              </div>
-            </motion.div>
+          {/* Orbiting Ring 2 (Outer Orbit with brand-primary node) */}
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-800/20 rounded-full z-10 pointer-events-none"
+            animate={{ rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            {/* Orbit Node */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-[0_0_15px_rgba(249,112,9,0.8)] border-2 border-white/25" />
+          </motion.div>
 
-            {/* Visual Card 2: Neural Synapse Guard */}
-            <motion.div
-              className="absolute bottom-6 left-12 bg-slate-900/95 border border-slate-800 rounded-2xl p-4 w-60 shadow-2xl flex items-center space-x-3.5 z-10 backdrop-blur-sm select-none"
-              animate={{ 
-                y: [0, 15, 0],
-                x: [0, -8, 0]
-              }}
-              transition={{ 
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-                <ShieldCheck className="w-6 h-6 animate-pulse" />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Neural Synapse</h4>
-                <p className="text-sm font-display font-black text-white">Threat Shield Online</p>
-              </div>
-            </motion.div>
+          {/* Floating Card 1: Performance */}
+          <motion.div 
+            className="absolute top-[15%] left-[5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            whileHover={{ scale: 1.05, y: -5 }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ 
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+              scale: { duration: 0.2 }
+            }}
+          >
+            <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              <Activity size={24} className="animate-pulse" />
+            </div>
+            <div>
+              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Uptime</p>
+              <p className="text-2xl font-black text-white">99.99%</p>
+            </div>
+          </motion.div>
 
-            {/* Visual Card 3: Deep Compute Statistics */}
-            <motion.div
-              className="absolute top-1/3 right-4 bg-slate-900/85 border border-slate-800 rounded-2xl p-5 w-52 shadow-2xl flex flex-col space-y-2.5 z-20 backdrop-blur-sm select-none"
-              animate={{ 
-                y: [0, -18, 0]
-              }}
-              transition={{ 
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[9px] text-slate-500 font-bold tracking-wider uppercase">Neural Compute</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              </div>
-              <div className="text-left">
-                <p className="text-xl font-display font-black text-white">98.4 TFLOPs</p>
-                <p className="text-[10px] text-slate-400">Inference Response Speed</p>
-              </div>
-              <div className="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
-                <motion.div 
-                  className="bg-gradient-to-r from-primary to-accent h-full"
-                  animate={{ width: ["20%", "85%", "45%", "92%", "35%", "99%"] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                />
-              </div>
-            </motion.div>
+          {/* Floating Card 2: Security */}
+          <motion.div 
+            className="absolute bottom-[15%] left-[10%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            whileHover={{ scale: 1.05, y: -5 }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ 
+              y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
+              scale: { duration: 0.2 }
+            }}
+          >
+            <div className="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
+              <CheckCircle2 size={24} />
+            </div>
+            <div>
+              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Security</p>
+              <p className="text-2xl font-black text-white">Bank-Grade</p>
+            </div>
+          </motion.div>
 
-            {/* Stylized Orbiting AI / ML Nodes */}
-            {[
-              { label: 'AI', color: 'from-[#ff6b00] to-[#ff9d00]', top: '2%', right: '40%', delay: 1.5 },
-              { label: 'ML', color: 'from-[#8a2be2] to-[#da70d6]', bottom: '15%', right: '5%', delay: 2 },
-              { label: 'LLM', color: 'from-[#00c6ff] to-[#0072ff]', top: '55%', left: '-2%', delay: 0.8 }
-            ].map((node, idx) => (
-              <motion.div
-                key={idx}
-                className={`absolute w-12 h-12 rounded-full bg-gradient-to-br ${node.color} text-white font-display font-black text-[10px] flex items-center justify-center shadow-lg border border-slate-700/30 select-none z-10`}
-                style={{ 
-                  top: node.top, 
-                  bottom: node.bottom, 
-                  left: node.left, 
-                  right: node.right 
-                }}
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 360],
-                  y: [0, 8, 0]
-                }}
-                transition={{ 
-                  duration: 8 + idx,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: node.delay
-                }}
-                whileHover={{ scale: 1.2, rotate: 15 }}
-              >
-                {node.label}
-              </motion.div>
-            ))}
+          {/* Floating Card 3: Payments */}
+          <motion.div 
+            className="absolute top-[40%] right-[-5%] bg-slate-900/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 pr-8 shadow-2xl z-20 flex items-center gap-4 cursor-pointer select-none"
+            whileHover={{ scale: 1.05, y: -5 }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ 
+              y: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 },
+              scale: { duration: 0.2 }
+            }}
+          >
+            <div className="w-14 h-14 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary shadow-[0_0_20px_rgba(249,112,9,0.2)]">
+              <CreditCard size={24} />
+            </div>
+            <div>
+              <p className="text-[0.65rem] text-slate-400 font-bold uppercase tracking-widest mb-0.5">Transactions</p>
+              <p className="text-2xl font-black text-white">Seamless</p>
+            </div>
           </motion.div>
 
         </div>
+
       </div>
     </section>
-  )
+  );
 }
