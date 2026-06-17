@@ -24,7 +24,7 @@ export default function Products() {
       {/* Banner / Hero header */}
       <section className="bg-dark-navy text-white py-24 relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center z-0 opacity-100"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80')`
@@ -32,7 +32,7 @@ export default function Products() {
         />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:14px_24px] z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-navy/40 via-dark-navy/90 to-dark-navy z-10" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -52,7 +52,7 @@ export default function Products() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        
+
         {/* Core Product Grid */}
         <section className="mb-20">
           <div className="max-w-3xl mb-12 space-y-4">
@@ -65,7 +65,7 @@ export default function Products() {
             </h2>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
@@ -153,8 +153,8 @@ export default function Products() {
                 { title: 'ISO & VAPT Compliant', desc: 'Every product codebase undergoes regular penetration testing (VAPT) and conforms to ISO 27001 standard frameworks.' },
                 { title: 'Modular Architecture', desc: 'Easily toggle integrations (SMS gateways, trusted banking APIs, payment portals) with zero code conflicts.' }
               ].map((adv, idx) => (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   whileHover={{ y: -6, scale: 1.02, borderColor: "rgba(255, 107, 0, 0.25)", boxShadow: "0 15px 30px rgba(255, 107, 0, 0.08)" }}
                   whileTap={{ scale: 0.99 }}
                   className="bg-white rounded-xl p-6 border border-slate-200/50 shadow-sm transition-all duration-300 cursor-pointer"
@@ -200,13 +200,12 @@ export default function Products() {
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${
-                    isOpen 
-                      ? 'bg-white border-primary shadow-md' 
+                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${isOpen
+                      ? 'bg-white border-primary shadow-md'
                       : 'bg-white border-slate-200/60 hover:border-primary/25'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? -1 : idx)}
@@ -216,8 +215,8 @@ export default function Products() {
                       {faq.q}
                     </span>
                     <span className="flex-shrink-0 ml-4">
-                      {isOpen 
-                        ? <Minus className="w-5 h-5 text-primary" /> 
+                      {isOpen
+                        ? <Minus className="w-5 h-5 text-primary" />
                         : <Plus className="w-5 h-5 text-text-secondary group-hover:text-primary transition-colors" />
                       }
                     </span>

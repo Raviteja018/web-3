@@ -20,7 +20,7 @@ export default function Contact() {
       {/* Banner / Hero header */}
       <section className="bg-dark-navy text-white py-24 relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center z-0 opacity-100"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80')`
@@ -28,14 +28,14 @@ export default function Contact() {
         />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:14px_24px] z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-navy/40 via-dark-navy/90 to-dark-navy z-10" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            
+
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl">Contact Us</h1>
             <p className="text-slate-300 mt-4 max-w-xl mx-auto text-base sm:text-lg">
               Get in touch with our tech experts to schedule a custom system design review.
@@ -47,7 +47,7 @@ export default function Contact() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Left Column: Contact details & Office Hours */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
@@ -62,8 +62,8 @@ export default function Contact() {
             {/* Communication Info Cards */}
             <div className="space-y-4">
               {/* Phone Card */}
-              <motion.a 
-                href="tel:+918500022226" 
+              <motion.a
+                href="tel:+918500022226"
                 whileHover={{ y: -4, scale: 1.015, boxShadow: "0 15px 30px rgba(255, 107, 0, 0.06)", borderColor: "rgba(255, 107, 0, 0.2)" }}
                 whileTap={{ scale: 0.995 }}
                 className="flex items-center space-x-4 p-5 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
@@ -78,8 +78,8 @@ export default function Contact() {
               </motion.a>
 
               {/* Email Card */}
-              <motion.a 
-                href="mailto:worldtek.in@gmail.com" 
+              <motion.a
+                href="mailto:worldtek.in@gmail.com"
                 whileHover={{ y: -4, scale: 1.015, boxShadow: "0 15px 30px rgba(255, 107, 0, 0.06)", borderColor: "rgba(255, 107, 0, 0.2)" }}
                 whileTap={{ scale: 0.995 }}
                 className="flex items-center space-x-4 p-5 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
@@ -132,11 +132,11 @@ export default function Contact() {
 
           {/* Right Column: Interactive Form & Support Portals */}
           <div className="lg:col-span-7 space-y-6">
-            
+
             {/* Form */}
             <div className="bg-white rounded-xl2 border border-slate-200/60 shadow-md p-8 sm:p-10">
               <h3 className="font-display font-bold text-2xl text-dark-navy mb-6">Send A Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1">
@@ -195,9 +195,8 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitted}
-                  className={`w-full inline-flex items-center justify-center font-bold py-3.5 rounded-full transition-all duration-300 text-white ${
-                    submitted ? 'bg-green-500 shadow-none cursor-default' : 'bg-primary hover:bg-secondary shadow-glow hover:-translate-y-0.5'
-                  }`}
+                  className={`w-full inline-flex items-center justify-center font-bold py-3.5 rounded-full transition-all duration-300 text-white ${submitted ? 'bg-green-500 shadow-none cursor-default' : 'bg-primary hover:bg-secondary shadow-glow hover:-translate-y-0.5'
+                    }`}
                 >
                   {submitted ? (
                     <span>Message Sent Successfully!</span>

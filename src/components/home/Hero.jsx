@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#0B1120] overflow-hidden pt-28 pb-16" id="home">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#0B1120] overflow-hidden pt-6 lg:pt-6 pb-6" id="home">
 
       {/* Very subtle background grid for texture */}
       <div className="absolute inset-0 pointer-events-none [background-image:linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] [background-size:40px_40px]" />

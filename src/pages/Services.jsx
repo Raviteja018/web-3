@@ -38,7 +38,7 @@ export default function Services() {
       {/* Banner / Hero header */}
       <section className="bg-dark-navy text-white py-24 relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center z-0 opacity-100"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80')`
@@ -46,14 +46,14 @@ export default function Services() {
         />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:14px_24px] z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-navy/40 via-dark-navy/90 to-dark-navy z-10" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-     
+
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl">Our Services</h1>
             <p className="text-slate-300 mt-4 max-w-xl mx-auto text-base sm:text-lg">
               Reliable, secure, and scalable IT offerings designed to drive modern business growth.
@@ -64,7 +64,7 @@ export default function Services() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        
+
         {/* What We Do Section */}
         <section className="bg-white rounded-xl2 shadow-md p-8 sm:p-12 mb-16 border border-bg-alt">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -103,7 +103,7 @@ export default function Services() {
             </h2>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -144,7 +144,7 @@ export default function Services() {
         {/* Technologies Grid Section */}
         <section className="bg-dark-navy text-white rounded-xl2 shadow-2xl p-10 sm:p-14 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-          
+
           <div className="max-w-3xl mb-14 space-y-4">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-xs sm:text-sm uppercase">
               <span className="text-secondary font-extrabold">//</span>
@@ -211,8 +211,8 @@ export default function Services() {
                 { title: '24/7 Global Operations', desc: 'Constant platform monitoring, automated backups, and emergency engineering lines.' },
                 { title: 'End-to-End Delivery', desc: 'From wireframes and system blueprints to direct deployment and global scaling.' }
               ].map((value, idx) => (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   whileHover={{ y: -6, scale: 1.02, borderColor: "rgba(255, 107, 0, 0.25)", boxShadow: "0 15px 30px rgba(255, 107, 0, 0.08)" }}
                   whileTap={{ scale: 0.99 }}
                   className="bg-white rounded-xl p-6 border border-slate-200/50 shadow-sm transition-all duration-300 cursor-pointer"
@@ -258,13 +258,12 @@ export default function Services() {
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${
-                    isOpen 
-                      ? 'bg-white border-primary shadow-md' 
+                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${isOpen
+                      ? 'bg-white border-primary shadow-md'
                       : 'bg-white border-slate-200/60 hover:border-primary/25'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? -1 : idx)}
@@ -274,8 +273,8 @@ export default function Services() {
                       {faq.q}
                     </span>
                     <span className="flex-shrink-0 ml-4">
-                      {isOpen 
-                        ? <Minus className="w-5 h-5 text-primary" /> 
+                      {isOpen
+                        ? <Minus className="w-5 h-5 text-primary" />
                         : <Plus className="w-5 h-5 text-text-secondary group-hover:text-primary transition-colors" />
                       }
                     </span>

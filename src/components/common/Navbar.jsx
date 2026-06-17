@@ -33,22 +33,21 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-slate-100 shadow-md py-2'
-            : 'bg-white border-transparent py-4'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
+            ? 'bg-white/95 backdrop-blur-md border-slate-100 shadow-md py-1.5'
+            : 'bg-white border-transparent py-2.5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center justify-between h-12">
 
             {/* Logo */}
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link to="/" className="flex items-center space-x-2">
-                <img 
-                  src={companyLogo} 
-                  alt="WorldTek Logo" 
-                  className="h-9 sm:h-10 w-auto object-contain" 
+                <img
+                  src={companyLogo}
+                  alt="WorldTek Logo"
+                  className="h-9 sm:h-10 w-auto object-contain"
                 />
               </Link>
             </motion.div>
@@ -60,10 +59,9 @@ export default function Navbar() {
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) =>
-                    `font-bold text-sm transition-all duration-300 relative py-2.5 px-4 rounded-full ${
-                      isActive
-                        ? 'text-primary bg-primary/5'
-                        : 'text-text-secondary hover:text-primary hover:bg-slate-100/50'
+                    `font-bold text-sm transition-all duration-300 relative py-2.5 px-4 rounded-full ${isActive
+                      ? 'text-primary bg-primary/5'
+                      : 'text-text-secondary hover:text-primary hover:bg-slate-100/50'
                     }`
                   }
                 >
@@ -125,10 +123,9 @@ export default function Navbar() {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
-                      `block px-4 py-3 rounded-xl text-base font-bold transition-all duration-200 ${
-                        isActive
-                          ? 'text-primary bg-primary/5 border-l-4 border-primary'
-                          : 'text-text-secondary hover:text-primary hover:bg-slate-50'
+                      `block px-4 py-3 rounded-xl text-base font-bold transition-all duration-200 ${isActive
+                        ? 'text-primary bg-primary/5 border-l-4 border-primary'
+                        : 'text-text-secondary hover:text-primary hover:bg-slate-50'
                       }`
                     }
                   >
@@ -152,7 +149,7 @@ export default function Navbar() {
       </nav>
 
       {/* Spacer to push content below sticky navbar */}
-      <div className="h-[88px] bg-white"></div>
+      <div className="h-[68px] bg-white"></div>
     </>
   )
 }

@@ -67,7 +67,7 @@ export default function Projects() {
       {/* Banner / Hero header */}
       <section className="bg-dark-navy text-white py-24 relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center z-0 opacity-100"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=80')`
@@ -75,7 +75,7 @@ export default function Projects() {
         />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:14px_24px] z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-navy/40 via-dark-navy/90 to-dark-navy z-10" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -93,7 +93,7 @@ export default function Projects() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        
+
         {/* Filters bar */}
         <div className="flex flex-wrap gap-2 justify-center mb-16">
           {categories.map((cat) => {
@@ -102,9 +102,8 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 focus:outline-none ${
-                  isActive ? 'text-white bg-primary shadow-glow' : 'text-text-secondary bg-white hover:text-primary border border-slate-200/60'
-                }`}
+                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 focus:outline-none ${isActive ? 'text-white bg-primary shadow-glow' : 'text-text-secondary bg-white hover:text-primary border border-slate-200/60'
+                  }`}
               >
                 <span>{cat}</span>
               </button>
@@ -113,7 +112,7 @@ export default function Projects() {
         </div>
 
         {/* Dynamic Project Grid */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
@@ -137,7 +136,7 @@ export default function Projects() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-navy/95 via-dark-navy/55 to-transparent group-hover:from-dark-navy/95 group-hover:via-dark-navy/65 transition-colors duration-300" />
-                
+
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                   <div className="space-y-4 max-w-[85%]">
@@ -146,7 +145,7 @@ export default function Projects() {
                     </h3>
                     <div className="flex flex-wrap gap-1.5">
                       {proj.tags.map((tag) => (
-                        <span 
+                        <span
                           key={tag}
                           className="text-[10px] font-semibold px-2.5 py-0.5 bg-white/10 rounded-full border border-white/10 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300"
                         >
@@ -158,7 +157,7 @@ export default function Projects() {
 
                   {/* Arrow Action */}
                   <div className="absolute bottom-6 right-6">
-                    <motion.div 
+                    <motion.div
                       variants={arrowVariants}
                       className="w-10 h-10 rounded-full text-white flex items-center justify-center transition-shadow duration-300"
                     >
@@ -204,13 +203,12 @@ export default function Projects() {
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${
-                    isOpen 
-                      ? 'bg-white border-primary shadow-md' 
+                  className={`rounded-xl overflow-hidden shadow-sm border transition-all duration-300 ${isOpen
+                      ? 'bg-white border-primary shadow-md'
                       : 'bg-white border-slate-200/60 hover:border-primary/25'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? -1 : idx)}
@@ -220,8 +218,8 @@ export default function Projects() {
                       {faq.q}
                     </span>
                     <span className="flex-shrink-0 ml-4">
-                      {isOpen 
-                        ? <Minus className="w-5 h-5 text-primary" /> 
+                      {isOpen
+                        ? <Minus className="w-5 h-5 text-primary" />
                         : <Plus className="w-5 h-5 text-text-secondary group-hover:text-primary transition-colors" />
                       }
                     </span>
