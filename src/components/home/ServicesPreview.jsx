@@ -116,12 +116,6 @@ export default function ServicesPreview() {
                     {service.description}
                   </p>
                 </div>
-
-                {/* Read More Link */}
-                <div className="inline-flex items-center text-sm font-bold text-primary group-hover:text-secondary transition-colors duration-300 mt-auto">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4 ml-1.5 transition-transform duration-300 group-hover:translate-x-1.5" />
-                </div>
               </motion.div>
             )
           })}
