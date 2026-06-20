@@ -68,7 +68,7 @@ export default function OurWorkProcess() {
     <section ref={ref} className="py-24 bg-white relative overflow-hidden">
       
       {/* Background Graphic Accents */}
-      <div className="absolute inset-0 pointer-events-none opacity-5 flex items-center justify-center select-none">
+      <div className="absolute inset-0 pointer-events-none opacity-8 flex items-center justify-center select-none">
         <span className="font-display font-black text-[12vw] text-dark-navy tracking-widest uppercase">
           Worldtek
         </span>
