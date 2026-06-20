@@ -7,11 +7,18 @@ import { CheckCircle2, ArrowRight, Plus, Minus, ChevronDown } from 'lucide-react
 
 export default function Services() {
   const [activeFaq, setActiveFaq] = useState(-1)
-  const [expandedService, setExpandedService] = useState(null)
+  const [flippedCards, setFlippedCards] = useState({})
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.15
   })
+
+  const handleCardClick = (id) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }))
+  }
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -114,13 +121,15 @@ export default function Services() {
           >
             {servicesData.map((service, idx) => {
               const ServiceIcon = service.icon
+              const isFlipped = !!flippedCards[service.id]
               return (
                 <motion.div
                   key={service.id}
                   variants={itemVariants}
+                  onClick={() => handleCardClick(service.id)}
                   className="perspective-1000 min-h-[460px] lg:h-[500px] group cursor-pointer"
                 >
-                  <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+                  <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180 ${isFlipped ? 'rotate-y-180' : ''}`}>
                     
                     {/* Front Side */}
                     <div className="absolute inset-0 backface-hidden bg-white rounded-xl2 p-8 shadow-sm border border-bg-alt flex flex-col justify-between items-center text-center">
@@ -136,7 +145,7 @@ export default function Services() {
                         </p>
                       </div>
                       <div className="text-xs font-bold text-primary flex items-center gap-1 mt-auto">
-                        <span>Hover to view offerings</span>
+                        <span>View offerings</span>
                         <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
                       </div>
                     </div>
@@ -165,6 +174,10 @@ export default function Services() {
                             ))}
                           </ul>
                         )}
+                      </div>
+                      
+                      <div className="text-[10px] font-bold text-primary flex items-center gap-1 mt-auto">
+                        <span>Click to flip back</span>
                       </div>
                     </div>
 
