@@ -12,20 +12,22 @@ export default function Hero() {
 
         {/* Left Content - Sharp, Minimal Typography */}
         <div className="flex flex-col items-start max-lg:items-center max-lg:text-center animate-fade-in-up">
-          <h1 className="text-xl sm:text-3xl md:text-[2rem] lg:text-[2rem] font-black leading-[1.1] text-white mb-6 tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-[2rem] lg:text-[2rem] font-black leading-[1.1] text-white mb-6 tracking-tight">
             Empowering <span className="text-brand-primary">Governments,</span>{' '}
             <br className="hidden lg:block" />
             <span className="text-brand-primary ">Enterprises &amp; Businesses</span> with{' '}
             <br className="hidden lg:block" />
             <span className="">Intelligent Digital Solutions</span> by{' '}
+            {' '}
             <br className="hidden lg:block" />
-            <span className="text-brand-primary text-[3rem] relative ">Worldtek Innovations.
+            <br className="hidden lg:block" />
+            <span className="text-brand-primary text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[2.75rem] relative  ">Worldtek Innovations.
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-accent/50" viewBox="0 0 100 20" preserveAspectRatio="none">
                 <path d="M0,10 Q50,20 100,0" stroke="currentColor" strokeWidth="8" fill="none" />
               </svg>
             </span>
           </h1>
-
+            {/* <br className="hidden lg:block" /> */}
           <p className="text-base md:text-md text-slate-300 mb-10 max-w-xl font-medium leading-relaxed">
             <span className="text-brand-primary font-bold">Worldtek Innovations</span> delivers secure, scalable, and innovative technology platforms that simplify operations, enhance customer experiences, and accelerate digital transformation — from Payment Solutions and ERP Platforms to AI-powered Automation and WhatsApp Business Solutions.
           </p>
