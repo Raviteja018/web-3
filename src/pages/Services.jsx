@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { servicesData } from '../data/services'
 import { techExpertiseData } from '../data/technologies'
-import { CheckCircle2, ArrowRight, Plus, Minus } from 'lucide-react'
+import { CheckCircle2, ArrowRight, Plus, Minus, ChevronDown } from 'lucide-react'
 
 export default function Services() {
   const [activeFaq, setActiveFaq] = useState(-1)
+  const [expandedService, setExpandedService] = useState(null)
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.15
@@ -25,12 +26,14 @@ export default function Services() {
   }
 
   const whatWeDo = [
-    'Custom Software Development',
-    'Digital Transformation Services',
-    'IT Infrastructure Solutions',
-    'Cloud-Based Technologies',
-    'Scalable Business Applications',
-    'Cost-Effective Technology Services'
+    'Payment Gateway & UPI Solutions',
+    'ERP & Business Automation Platforms',
+    'WhatsApp Business & Chatbot Solutions',
+    'AI & Intelligent Workflow Automation',
+    'Mobile & Web Application Development',
+    'Government Digital Transformation',
+    'POS & Merchant Management Systems',
+    'Cloud Infrastructure & Scalable Platforms'
   ]
 
   return (
@@ -53,10 +56,9 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl">Our Services</h1>
-            <p className="text-slate-300 mt-4 max-w-xl mx-auto text-base sm:text-lg">
-              Reliable, secure, and scalable IT offerings designed to drive modern business growth.
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl">Our Solutions</h1>
+            <p className="text-slate-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+              Secure, scalable, and innovative technology platforms that simplify operations, enhance customer experiences, and accelerate digital transformation.
             </p>
           </motion.div>
         </div>
@@ -74,10 +76,10 @@ export default function Services() {
                 <span>What We Do</span>
               </div>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-dark-navy">
-                Empowering Businesses through End-to-End Solutions
+                Empowering Organizations with End-to-End Digital Solutions
               </h2>
               <p className="text-text-secondary text-base leading-relaxed">
-                We deliver high-fidelity digital solutions structured for scalability and security, matching standard compliance layers to optimize organizational productivity.
+                From Payment Solutions and ERP Platforms to AI-powered Automation and Government Digital Services — we help organizations build smarter ecosystems for the future.
               </p>
             </div>
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -91,7 +93,7 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Services Showcase Section */}
+        {/* Solutions Showcase Section */}
         <section className="mb-24">
           <div className="max-w-3xl mb-12 space-y-4">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm uppercase">
@@ -99,7 +101,7 @@ export default function Services() {
               <span>Our Specializations</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-dark-navy">
-              Services We Provide
+              Solutions We Provide
             </h2>
           </div>
 
@@ -116,24 +118,56 @@ export default function Services() {
                 <motion.div
                   key={service.id}
                   variants={itemVariants}
-                  whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 40px rgba(255,107,0,0.08)", borderColor: "rgba(255,107,0,0.2)" }}
-                  whileTap={{ scale: 0.99 }}
-                  className="bg-white rounded-xl2 p-8 shadow-sm border border-bg-alt transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"
+                  className="perspective-1000 min-h-[460px] lg:h-[500px] group cursor-pointer"
                 >
-                  <div>
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      <ServiceIcon className="w-7 h-7" />
+                  <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+                    
+                    {/* Front Side */}
+                    <div className="absolute inset-0 backface-hidden bg-white rounded-xl2 p-8 shadow-sm border border-bg-alt flex flex-col justify-between items-center text-center">
+                      <div className="flex flex-col items-center justify-center h-full space-y-6">
+                        <div className="w-20 h-20 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shadow-sm">
+                          <ServiceIcon className="w-10 h-10" />
+                        </div>
+                        <h3 className="font-display font-black text-2xl text-dark-navy transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
+                          {service.description}
+                        </p>
+                      </div>
+                      <div className="text-xs font-bold text-primary flex items-center gap-1 mt-auto">
+                        <span>Hover to view offerings</span>
+                        <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
+                      </div>
                     </div>
-                    <h3 className="font-display font-bold text-xl sm:text-2xl text-dark-navy mb-4 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                  </div>
-                  <div className="inline-flex items-center text-sm font-bold text-primary group-hover:text-secondary transition-colors mt-auto">
-                    <span>Learn more</span>
-                    <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
+
+                    {/* Back Side */}
+                    <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white rounded-xl2 p-8 shadow-sm border border-slate-200 flex flex-col justify-between text-left">
+                      <div>
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <ServiceIcon className="w-5 h-5" />
+                          </div>
+                          <h4 className="font-display font-bold text-lg text-dark-navy">
+                            {service.title}
+                          </h4>
+                        </div>
+                        
+                        <div className="text-[10px] font-extrabold uppercase tracking-wider text-primary mb-4">// Core Offerings</div>
+                        
+                        {service.items && (
+                          <ul className="space-y-2.5">
+                            {service.items.map((item, i) => (
+                              <li key={i} className="flex items-center gap-2 text-xs text-text-secondary font-medium">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+
                   </div>
                 </motion.div>
               )
@@ -192,14 +226,14 @@ export default function Services() {
                 Engineering Excellence for Enterprise Systems
               </h2>
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
-                We go beyond standard code. WorldTek provides high-performance architectures, secure payment checkouts, and fully compliant security pipelines built to scale alongside your organization.
+                At Worldtek, we believe technology should simplify operations, empower organizations, and create meaningful experiences. We are committed to delivering solutions that drive efficiency, innovation, and long-term growth.
               </p>
               <div className="pt-4">
                 <a
                   href="/contact"
                   className="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all duration-300 shadow-glow"
                 >
-                  Start Your Project
+                  Start Your Digital Journey
                 </a>
               </div>
             </div>
@@ -208,8 +242,8 @@ export default function Services() {
               {[
                 { title: 'ISO & Compliance Standards', desc: 'Strict adherence to ISO 9001 and ISO 27001 data security compliance layers.' },
                 { title: 'Agile Delivery & CI/CD', desc: 'Constant status updates, iterative pipelines, and continuous deployment.' },
-                { title: '24/7 Global Operations', desc: 'Constant platform monitoring, automated backups, and emergency engineering lines.' },
-                { title: 'End-to-End Delivery', desc: 'From wireframes and system blueprints to direct deployment and global scaling.' }
+                { title: '24×7 Global Operations', desc: 'Constant platform monitoring, automated backups, and emergency engineering lines.' },
+                { title: 'End-to-End Delivery', desc: 'From wireframes and system blueprints to direct deployment and long-term support.' }
               ].map((value, idx) => (
                 <motion.div
                   key={idx}
@@ -230,7 +264,7 @@ export default function Services() {
           <div className="max-w-3xl mb-12 space-y-4">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm uppercase">
               <span className="text-secondary font-extrabold">//</span>
-              <span>Services FAQs</span>
+              <span>FAQs</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-dark-navy">
               Frequently Asked Questions
@@ -240,20 +274,20 @@ export default function Services() {
           <div className="max-w-4xl space-y-4">
             {[
               {
-                q: 'What is your standard project development timeline?',
-                a: 'Standard website projects take 4-6 weeks, while complex custom ERP/CRM platform integrations range from 8-12 weeks. We map out detailed milestone checklists during our blueprinting phase.'
+                q: 'What industries do you serve?',
+                a: 'We serve Government Departments, Banking & Financial Services, Healthcare, Education, Retail & E-Commerce, Hospitality, Manufacturing, Logistics & Transportation, Real Estate, and Small & Medium Enterprises.'
+              },
+              {
+                q: 'Do you provide custom ERP solutions for our specific business needs?',
+                a: 'Yes, our ERP platforms are fully tailor-made to your business — covering Finance, HR, Payroll, Inventory, Procurement, Asset Management, and Reporting, all configured to your workflows.'
+              },
+              {
+                q: 'How does your WhatsApp Business Automation work?',
+                a: 'We integrate with the official WhatsApp Business API to build intelligent chatbots, automate customer support, send notifications, run marketing campaigns, and enable CRM integration — all AI-powered.'
               },
               {
                 q: 'Do you offer post-launch support and platform updates?',
-                a: 'Yes, we provide flexible SLA support tiers ranging from general maintenance checks and bug fixes to dedicated 24/7 technical monitoring contracts.'
-              },
-              {
-                q: 'How do you handle project confidentiality and code IP?',
-                a: 'We sign strict NDAs before project blueprints begin. All code bases, databases, and IP rights transfer fully to you upon final project sign-off.'
-              },
-              {
-                q: 'Can you work with our existing hosting and local infrastructure?',
-                a: 'Absolutely. We regularly deploy systems to clients\' existing AWS, Azure, Google Cloud, or local private server clusters, ensuring seamless configurations.'
+                a: 'Yes, we provide 24×7 customer assistance and flexible SLA support tiers — from general maintenance and bug fixes to dedicated technical monitoring contracts.'
               }
             ].map((faq, idx) => {
               const isOpen = activeFaq === idx

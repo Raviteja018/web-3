@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MessageSquare, PhoneCall, Plus, Minus } from 'lucide-react'
 
 export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState(1) // Default open index matches mockup (item 2: What industries do you serve?)
+  const [openIdx, setOpenIdx] = useState() 
 
   const faqs = [
     {

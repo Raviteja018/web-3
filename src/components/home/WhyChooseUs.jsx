@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Play, HandCoins, Users, Briefcase, Trophy, ArrowRight } from 'lucide-react'
+import { Lightbulb, ShieldCheck, Settings, HeartHandshake, Layers, Users, ArrowRight } from 'lucide-react'
 
 export default function WhyChooseUs() {
   const [ref, inView] = useInView({
@@ -11,24 +11,34 @@ export default function WhyChooseUs() {
 
   const features = [
     {
-      title: 'Affordable Price',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: HandCoins
+      title: 'Innovation-Driven Approach',
+      description: 'We leverage emerging technologies to create future-ready solutions that keep your business ahead of the curve.',
+      Icon: Lightbulb
     },
     {
-      title: 'Professional Team',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+      title: 'Secure & Reliable',
+      description: 'Designed with enterprise-grade security and scalability, our platforms protect what matters most to your organization.',
+      Icon: ShieldCheck
+    },
+    {
+      title: 'Customized Solutions',
+      description: 'Tailor-made platforms built to suit your unique business requirements — no one-size-fits-all templates.',
+      Icon: Settings
+    },
+    {
+      title: 'End-to-End Support',
+      description: 'From consultation and implementation to maintenance and support — we are with you every step of the journey.',
+      Icon: HeartHandshake
+    },
+    {
+      title: 'Scalable Architecture',
+      description: 'Solutions engineered from the ground up to grow seamlessly alongside your business and user base.',
+      Icon: Layers
+    },
+    {
+      title: 'Experienced Team',
+      description: 'A cross-functional team of technology experts committed to delivering excellence on every engagement.',
       Icon: Users
-    },
-    {
-      title: '18+ Years Experience',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: Briefcase
-    },
-    {
-      title: 'Award Winning',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: Trophy
     }
   ]
 
@@ -64,10 +74,10 @@ export default function WhyChooseUs() {
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm uppercase">
               <span className="text-secondary font-extrabold">//</span>
-              <span>Why Choose Us</span>
+              <span>Why Choose Worldtek</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
-              Why Trust Us for Your IT Needs?
+              Why Trust Us for Your Digital Needs?
             </h2>
           </div>
           <div>
@@ -75,7 +85,7 @@ export default function WhyChooseUs() {
               to="/contact"
               className="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-glow hover:-translate-y-0.5 group"
             >
-              <span>Get A Quote</span>
+              <span>Request a Demo</span>
               <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -84,7 +94,7 @@ export default function WhyChooseUs() {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Video Mockup */}
+          {/* Left Column: Image */}
           <motion.div 
             className="lg:col-span-6"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -95,25 +105,28 @@ export default function WhyChooseUs() {
               {/* Presentation/Meeting Background Image */}
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80"
-                alt="WorldTek Presentation Video"
+                alt="WorldTek Digital Solutions"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors duration-300 z-10" />
 
-              {/* Video Play Badge overlay */}
+              {/* Overlay Badge */}
               <div className="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-md text-white font-display font-bold text-[10px] tracking-wider px-3.5 py-2 rounded-lg select-none border border-slate-700/50">
-                <span>Enterprise Intro Video</span>
+                <span>Innovation at Scale</span>
               </div>
 
-              {/* Pulsing Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <button 
-                  className="relative w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center shadow-glow focus:outline-none transition-transform duration-300 group-hover:scale-110 cursor-pointer"
-                  aria-label="Play video"
-                >
-                  <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
-                  <Play className="w-8 h-8 fill-current ml-1" />
-                </button>
+              {/* Stats overlay */}
+              <div className="absolute bottom-4 left-4 right-4 z-20 grid grid-cols-3 gap-2">
+                {[
+                  { label: 'Uptime', value: '99.99%' },
+                  { label: 'Projects', value: '500+' },
+                  { label: 'Support', value: '24×7' }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-900/80 backdrop-blur-md rounded-lg p-2 border border-slate-700/50 text-center">
+                    <div className="text-primary font-black text-sm">{stat.value}</div>
+                    <div className="text-slate-400 text-[9px] uppercase tracking-wider font-bold">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

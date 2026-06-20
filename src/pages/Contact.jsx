@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Ticket, Heart } from 'lucide-react'
+import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Ticket, Heart, Activity } from 'lucide-react'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -52,23 +52,23 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <h2 className="font-display font-black text-3xl text-dark-navy">
-                Let's Build Something Together
+                Let's Build the Future Together
               </h2>
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
-                Contact WorldTek Innovations Pvt. Ltd. to discuss enterprise scaling requirements, customized ERP features, or database security compliance audits.
+                Partner with Worldtek Innovations Pvt. Ltd. to transform your ideas into powerful digital solutions. Ready to accelerate your digital journey? Get in touch with our experts today.
               </p>
             </div>
 
             {/* Communication Info Cards */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               {/* Phone Card */}
               <motion.a
                 href="tel:+918500022226"
                 whileHover={{ y: -4, scale: 1.015, boxShadow: "0 15px 30px rgba(255, 107, 0, 0.06)", borderColor: "rgba(255, 107, 0, 0.2)" }}
                 whileTap={{ scale: 0.995 }}
-                className="flex items-center space-x-4 p-5 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
+                className="flex items-center space-x-4 p-4 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -77,31 +77,30 @@ export default function Contact() {
                 </div>
               </motion.a>
 
-              {/* Email Card */}
               <motion.a
-                href="mailto:worldtek.in@gmail.com"
+                href="mailto:info@worldtek.in"
                 whileHover={{ y: -4, scale: 1.015, boxShadow: "0 15px 30px rgba(255, 107, 0, 0.06)", borderColor: "rgba(255, 107, 0, 0.2)" }}
                 whileTap={{ scale: 0.995 }}
-                className="flex items-center space-x-4 p-5 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
+                className="flex items-center space-x-4 p-4 bg-white rounded-xl2 border border-slate-200/60 shadow-sm transition-all duration-300 group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs text-text-secondary font-semibold uppercase tracking-wider">Email Support</div>
-                  <div className="font-display font-bold text-lg text-dark-navy mt-0.5">worldtek.in@gmail.com</div>
+                  <div className="font-display font-bold text-lg text-dark-navy mt-0.5">info@worldtek.in</div>
                 </div>
               </motion.a>
 
               {/* Address Card */}
-              <div className="flex items-center space-x-4 p-5 bg-white rounded-xl2 border border-slate-200/60 shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+              <div className="flex items-center space-x-4 p-4 bg-white rounded-xl2 border border-slate-200/60 shadow-sm">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs text-text-secondary font-semibold uppercase tracking-wider">Headquarters</div>
                   <div className="font-display font-bold text-sm sm:text-base text-dark-navy mt-0.5">
-                    WorldTek Innovations Pvt. Ltd., Hyderabad, India
+                    Worldtek Innovations Pvt. Ltd., Hyderabad, India
                   </div>
                 </div>
               </div>
@@ -111,7 +110,7 @@ export default function Contact() {
             <div className="bg-white rounded-xl2 border border-slate-200/60 p-6 shadow-sm">
               <div className="flex items-center space-x-3 mb-4 text-primary">
                 <Clock className="w-5 h-5" />
-                <span className="font-display font-bold text-lg text-dark-navy">Office Hours</span>
+                <span className="font-display font-bold text-lg text-dark-navy">Support Hours</span>
               </div>
               <ul className="space-y-2.5 text-sm text-text-secondary">
                 <li className="flex justify-between border-b border-bg-alt pb-1.5">
@@ -122,9 +121,13 @@ export default function Contact() {
                   <span>Saturday</span>
                   <span className="font-semibold text-dark-navy">9:00 AM - 2:00 PM</span>
                 </li>
+                <li className="flex justify-between border-b border-bg-alt pb-1.5">
+                  <span>Customer Assistance</span>
+                  <span className="font-semibold text-green-600 text-xs tracking-wider mt-0.5">24×7</span>
+                </li>
                 <li className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="font-semibold text-red-500 uppercase text-xs tracking-wider mt-0.5">Closed</span>
+                  <span>Emergency Support</span>
+                  <span className="font-semibold text-green-600 text-xs tracking-wider mt-0.5">Always On</span>
                 </li>
               </ul>
             </div>
@@ -251,7 +254,7 @@ export default function Contact() {
         </div>
 
         {/* Embedded Interactive Map Card */}
-        <section className="mt-16 bg-white rounded-xl2 border border-slate-200/60 p-4 shadow-md overflow-hidden">
+        <section className="mt-8 bg-white rounded-xl2 border border-slate-200/60 p-4 shadow-md overflow-hidden">
           <div className="w-full h-[380px] rounded-xl overflow-hidden shadow-inner border border-slate-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.486241743516!2d78.38006737599026!3d17.436421901375752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc8c55e94f%3A0xe7a56c382dfa52f4!2sCyber%20Towers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"

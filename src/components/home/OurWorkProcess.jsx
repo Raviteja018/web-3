@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ClipboardCheck, Lightbulb, Blocks, Sparkles } from 'lucide-react'
+import { Search, PenTool, Code2, Rocket, LifeBuoy } from 'lucide-react'
 
 export default function OurWorkProcess() {
   const [ref, inView] = useInView({
@@ -11,27 +11,33 @@ export default function OurWorkProcess() {
   const steps = [
     {
       num: '01',
-      title: 'Consultation',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: ClipboardCheck
+      title: 'Discover',
+      description: 'Understanding your business requirements, objectives, and challenges to define the right solution.',
+      Icon: Search
     },
     {
       num: '02',
-      title: 'Strategy',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: Lightbulb
+      title: 'Design',
+      description: 'Creating user-centric, scalable solution architectures and interface designs tailored to your needs.',
+      Icon: PenTool
     },
     {
       num: '03',
-      title: 'Implementation',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: Blocks
+      title: 'Develop',
+      description: 'Building secure, reliable, and high-performance systems using industry-best engineering practices.',
+      Icon: Code2
     },
     {
       num: '04',
-      title: 'Final Result',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      Icon: Sparkles
+      title: 'Deploy',
+      description: 'Seamless implementation, integration, and go-live support ensuring a smooth transition.',
+      Icon: Rocket
+    },
+    {
+      num: '05',
+      title: 'Support',
+      description: 'Continuous monitoring, technical assistance, and proactive updates to keep your platform running perfectly.',
+      Icon: LifeBuoy
     }
   ]
 
@@ -64,7 +70,7 @@ export default function OurWorkProcess() {
       {/* Background Graphic Accents */}
       <div className="absolute inset-0 pointer-events-none opacity-5 flex items-center justify-center select-none">
         <span className="font-display font-black text-[12vw] text-dark-navy tracking-widest uppercase">
-          Process
+          Worldtek
         </span>
       </div>
 
@@ -73,22 +79,22 @@ export default function OurWorkProcess() {
         <div className="max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm uppercase">
             <span className="text-secondary font-extrabold">//</span>
-            <span>Our Work Process</span>
+            <span>Our Worldtek</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-dark-navy leading-tight">
-            Our Proven Work Process
+            How We Deliver Excellence
           </h2>
         </div>
 
         {/* Steps Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Connector Line (Desktop Only) */}
-          <div className="hidden lg:block absolute top-[68px] left-[12%] right-[12%] h-0.5 bg-slate-200 z-0" />
+          <div className="hidden lg:block absolute top-[68px] left-[10%] right-[10%] h-0.5 bg-slate-200 z-0" />
 
           {steps.map((step, idx) => {
             const StepIcon = step.Icon
@@ -121,11 +127,11 @@ export default function OurWorkProcess() {
                 <h3 className="font-display font-bold text-xl text-dark-navy mb-3 transition-colors duration-300 group-hover:text-primary">
                   {step.title}
                 </h3>
-                <p className="text-text-secondary text-sm leading-relaxed max-w-[240px]">
+                <p className="text-text-secondary text-sm leading-relaxed max-w-[200px]">
                   {step.description}
                 </p>
 
-                {/* Mobile/Tablet Connector Arrow (Right-facing for grids) */}
+                {/* Mobile/Tablet Connector Arrow */}
                 {idx < steps.length - 1 && (
                   <div className="md:hidden w-0.5 h-8 bg-slate-200 my-4" />
                 )}

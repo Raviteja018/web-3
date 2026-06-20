@@ -48,38 +48,38 @@ export default function AboutPreview() {
             {/* Collage Grid */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                {/* Image 1: Team Thumbs Up */}
+                {/* Image 1: Digital Payments */}
                 <div className="overflow-hidden rounded-xl2 bg-slate-100 shadow-lg border-2 border-bg-alt">
                   <img
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&q=80"
-                    alt="Our Tech Team"
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80"
+                    alt="Digital Payments & POS Solution"
                     className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                {/* Image 2: Woman working */}
+                {/* Image 2: Government/Enterprise Portal */}
                 <div className="overflow-hidden rounded-xl2 bg-slate-100 shadow-lg border-2 border-bg-alt">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
-                    alt="UX Designer"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
+                    alt="Enterprise & Government ERP Platform"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-4 pt-8">
-                {/* Image 3: Businessman */}
+                {/* Image 3: Intelligent AI Solutions */}
                 <div className="overflow-hidden rounded-xl2 bg-slate-100 shadow-lg border-2 border-bg-alt">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-                    alt="Lead Consultant"
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
+                    alt="Intelligent AI & Automation Solutions"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                {/* Image 4: Shared Work */}
+                {/* Image 4: WhatsApp & Mobile Solutions */}
                 <div className="overflow-hidden rounded-xl2 bg-slate-100 shadow-lg border-2 border-bg-alt">
                   <img
-                    src="https://images.unsplash.com/photo-1531535934027-667f687cede5?auto=format&fit=crop&w=600&q=80"
-                    alt="Collaboration Work"
+                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
+                    alt="WhatsApp Business & Mobile Solutions"
                     className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -103,7 +103,7 @@ export default function AboutPreview() {
                     <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
                     <text>
                       <textPath href="#circlePath">
-                        HIRE US • HIRE US • HIRE US • HIRE US • 
+                        WORLDTEK • INNOVATION • DIGITAL SOLUTIONS • 
                       </textPath>
                     </text>
                   </svg>
@@ -128,12 +128,12 @@ export default function AboutPreview() {
 
             {/* Main Heading */}
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-dark-navy leading-tight">
-              Transforming <span className="text-primary">Ideas into Digital Reality</span>
+              Building <span className="text-primary">Digital Excellence</span>
             </h2>
 
             {/* Description */}
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+              Worldtek Innovations Pvt. Ltd. is a technology-driven company focused on delivering next-generation digital solutions for Government Departments, Enterprises, Financial Institutions, Healthcare Organizations, Educational Institutions, and Businesses. Our expertise spans Digital Payments, ERP Platforms, WhatsApp Automation, AI Solutions, Mobile Applications, and Cloud Infrastructure.
             </p>
 
             {/* Stats list */}
@@ -169,20 +169,15 @@ export default function AboutPreview() {
               </div>
             </div>
 
-            {/* Signature Area */}
-            <div className="flex items-center space-x-4 pt-6">
-              <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80"
-                alt="Jenny Alexander"
-                className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-              />
-              <div>
-                <div className="font-display text-xl font-bold italic text-dark-navy tracking-wide" style={{ fontFamily: 'Georgia, serif' }}>
-                  Jenny Alexander
-                </div>
-                <div className="text-xs text-text-secondary uppercase tracking-wider font-semibold">
-                  Jenny Alexander • CEO
-                </div>
+            {/* Vision & Mission Pills */}
+            <div className="flex flex-wrap gap-3 pt-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/8 text-primary border border-primary/15 rounded-full text-xs font-bold uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Vision: Global Technology Partner
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/8 text-primary border border-primary/15 rounded-full text-xs font-bold uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Mission: Secure &amp; Scalable Solutions
               </div>
             </div>
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Monitor, Smartphone, Palette, ArrowRight } from 'lucide-react'
+import { CreditCard, BarChart3, MessageSquare, ArrowRight } from 'lucide-react'
 
 export default function ServicesPreview() {
   const [ref, inView] = useInView({
@@ -11,22 +11,22 @@ export default function ServicesPreview() {
 
   const services = [
     {
-      title: 'Website Development',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      Icon: Monitor,
-      path: '/services/web-development'
+      title: 'Payment Solutions',
+      description: 'Comprehensive payment infrastructure — Payment Gateways, UPI APIs, QR Payments, Payout Solutions, Merchant Management, and Digital Collection Platforms.',
+      Icon: CreditCard,
+      path: '/services'
     },
     {
-      title: 'Mobile App Development',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      Icon: Smartphone,
-      path: '/services/mobile-development'
+      title: 'Enterprise ERP Platforms',
+      description: 'Integrated ERP to streamline Finance, Inventory, HR, Payroll, Attendance, Asset Management, and Reporting & Analytics across your organization.',
+      Icon: BarChart3,
+      path: '/services'
     },
     {
-      title: 'UI/UX Design',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      Icon: Palette,
-      path: '/services/ui-ux-design'
+      title: 'WhatsApp Business Automation',
+      description: 'Engage customers with intelligent WhatsApp Chatbots, Marketing Campaigns, Notifications, Order Tracking, CRM Integration, and AI-Powered Conversations.',
+      Icon: MessageSquare,
+      path: '/services'
     }
   ]
 
@@ -57,11 +57,11 @@ export default function ServicesPreview() {
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-sm uppercase">
               <span className="text-secondary font-extrabold">//</span>
-              <span>Our Services</span>
+              <span>Our Solutions</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-dark-navy leading-tight">
-              Services We Provide to <br />
-              Elevate Your Business
+              Intelligent Digital Solutions <br />
+              for Every Business Need
             </h2>
           </div>
           <div>
@@ -69,7 +69,7 @@ export default function ServicesPreview() {
               to="/services"
               className="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-glow hover:-translate-y-0.5 group"
             >
-              <span>View All Services</span>
+              <span>View All Solutions</span>
               <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

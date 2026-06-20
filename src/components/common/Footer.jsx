@@ -1,25 +1,20 @@
-import { Link } from 'react-router-dom'
-import { Activity, Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { Activity, Mail, Phone, MapPin } from 'lucide-react'
 import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6'
 import companyLogo from '../../assets/images/company_logo.png'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const location = useLocation()
 
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  const handleLinkClick = (path) => {
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   return (
     <footer className="bg-dark-navy text-slate-300 relative border-t-4 border-primary pt-16 pb-8">
-      {/* Scroll to top button */}
-      <button
-        onClick={handleScrollToTop}
-        className="absolute top-0 right-8 md:right-16 transform -translate-y-1/2 w-12 h-12 bg-primary hover:bg-secondary text-white rounded-full flex items-center justify-center shadow-glow transition-all duration-300 hover:-translate-y-6 focus:outline-none"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="w-6 h-6" />
-      </button>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -27,7 +22,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-6">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            <Link 
+              to="/" 
+              onClick={() => handleLinkClick('/')}
+              className="flex items-center space-x-2"
+            >
               <img src={companyLogo} alt="WorldTek Logo" className="h-9 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -56,21 +55,20 @@ export default function Footer() {
           {/* Services Links */}
           <div>
             <h3 className="font-display font-semibold text-lg text-white mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-0.5 after:bg-primary">
-              Our Services
+              Our Solutions
             </h3>
             <ul className="space-y-3.5 text-sm">
               {[
-                { name: 'Website Development', path: '/services' },
-                { name: 'Mobile App Development', path: '/services' },
-                { name: 'IT Infrastructure Management', path: '/services' },
-                { name: 'Cybersecurity Solutions', path: '/services' },
-                { name: 'Cloud Services', path: '/services' },
-                { name: 'Digital Marketing', path: '/services' },
-                { name: 'Fintech & Utility Services', path: '/services' }
+                { name: 'Transformational Services', path: '/transformational-services' },
+                { name: 'Payment Solutions', path: '/services' },
+                { name: 'WhatsApp Business Automation', path: '/services' },
+                { name: 'AI & Automation Solutions', path: '/services' },
+                { name: 'Mobile & Web Development', path: '/services' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
+                    onClick={() => handleLinkClick(link.path)}
                     className="hover:text-primary hover:pl-2 transition-all duration-300"
                   >
                     {link.name}
@@ -90,13 +88,13 @@ export default function Footer() {
                 { name: 'Home Page', path: '/' },
                 { name: 'About Company', path: '/about' },
                 { name: 'Project Gallery', path: '/projects' },
-                { name: 'Latest Blogs', path: '/blog' },
-                { name: 'Join Our Team', path: '/careers' },
-                { name: 'Privacy Policy', path: '/privacy-policy' }
+                { name: 'Solutions', path: '/transformational-services' },
+                { name: 'Our Services', path: '/services' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
+                    onClick={() => handleLinkClick(link.path)}
                     className="hover:text-primary hover:pl-2 transition-all duration-300"
                   >
                     {link.name}
@@ -126,8 +124,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:worldtek.in@gmail.com" className="hover:text-primary transition-colors">
-                  worldtek.in@gmail.com
+                <a href="mailto:info@worldtek.in" className="hover:text-primary transition-colors">
+                  info@worldtek.in
                 </a>
               </li>
             </ul>

@@ -92,11 +92,14 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <h2 className="font-display font-black text-3xl sm:text-4xl text-dark-navy">
-                WorldTek Innovations Pvt. Ltd.
+                Worldtek Innovations Pvt. Ltd.
               </h2>
               <div className="w-16 h-1 bg-primary rounded-full" />
               <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-                WorldTek Innovations Pvt. Ltd. is a technology-driven company focused on delivering innovative digital and IT solutions. We help businesses accelerate growth through modern software, scalable infrastructure, and cutting-edge technology services.
+                Worldtek Innovations Pvt. Ltd. is a technology-driven company focused on delivering next-generation digital solutions for Government Departments, Enterprises, Financial Institutions, Healthcare Organizations, Educational Institutions, and Businesses. Our expertise spans Digital Payments, ERP Platforms, WhatsApp Automation, AI Solutions, Mobile Applications, Web Platforms, POS Ecosystems, and Cloud Infrastructure.
+              </p>
+              <p className="text-text-secondary text-base leading-relaxed">
+                With innovation at the core, we create intelligent systems that improve efficiency, increase transparency, and drive sustainable growth.
               </p>
             </div>
             <div className="lg:col-span-5 relative flex items-center justify-center">
@@ -126,8 +129,21 @@ export default function About() {
               </div>
               <h3 className="font-display font-black text-2xl text-dark-navy">Our Vision</h3>
               <p className="text-text-secondary leading-relaxed">
-                To become a globally trusted technology partner by delivering innovative digital solutions that empower businesses and create lasting value.
+                To become a trusted global technology partner by empowering organizations with innovative digital ecosystems.
               </p>
+              <ul className="space-y-2 text-text-secondary text-sm sm:text-base">
+                {[
+                  'Lead the global transition toward smart, secure, and unified digital ecosystems.',
+                  'Pioneer next-generation advancements in AI automation and fintech platforms.',
+                  'Establish a trusted, long-term technological framework for enterprises and governments.',
+                  'Empower businesses to scale effortlessly by turning complex systems into clean designs.',
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start space-x-2">
+                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
 
@@ -144,13 +160,16 @@ export default function About() {
                 <Rocket className="w-7 h-7" />
               </div>
               <h3 className="font-display font-black text-2xl text-dark-navy">Our Mission</h3>
+              <p className="text-text-secondary leading-relaxed">
+                To provide secure, scalable, and intelligent solutions that transform businesses and improve customer experiences.
+              </p>
               <ul className="space-y-2 text-text-secondary text-sm sm:text-base">
                 {[
-                  'Deliver high-quality technology solutions.',
-                  'Help businesses embrace digital transformation.',
-                  'Build long-term client relationships.',
-                  'Drive innovation through emerging technologies.',
-                  'Create scalable and sustainable business solutions.'
+                  'Deliver secure, scalable, and intelligent digital solutions.',
+                  'Empower Government Departments and Enterprises with smart technology.',
+                  'Build long-term partnerships based on trust and transparency.',
+                  'Drive innovation through emerging technologies like AI and automation.',
+                  'Create meaningful experiences that improve efficiency and growth.'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-2">
                     <span className="text-primary font-bold mt-0.5">•</span>
@@ -185,13 +204,18 @@ export default function About() {
                 <motion.div
                   key={idx}
                   variants={cardVariants}
-                  className="bg-white rounded-xl2 border border-bg-alt shadow-md p-8 text-center group hover:-translate-y-1.5 transition-all duration-300 hover:shadow-glow"
+                  className="bg-white rounded-xl2 border border-bg-alt shadow-md p-8 text-center group hover:-translate-y-1.5 transition-all duration-300 hover:shadow-glow relative overflow-hidden"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <ValIcon className="w-6 h-6" />
+                  {/* Slide-in Background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors duration-300">
+                      <ValIcon className="w-6 h-6" />
+                    </div>
+                    <h4 className="font-display font-bold text-lg text-dark-navy group-hover:text-white transition-colors duration-300 mb-2">{val.title}</h4>
+                    <p className="text-xs sm:text-sm text-text-secondary group-hover:text-white/90 transition-colors duration-300 leading-relaxed">{val.description}</p>
                   </div>
-                  <h4 className="font-display font-bold text-lg text-dark-navy mb-2">{val.title}</h4>
-                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">{val.description}</p>
                 </motion.div>
               )
             })}
@@ -273,88 +297,40 @@ export default function About() {
           </div>
         </section>
 
-        {/* Banking Partners Grid */}
+        {/* Industries We Serve */}
         <section className="mb-20 bg-bg-alt rounded-xl2 border border-bg-alt p-10 sm:p-12 text-center">
           <div className="max-w-3xl mx-auto mb-10 space-y-3">
             <div className="inline-flex items-center space-x-2 text-primary font-bold tracking-wider text-xs sm:text-sm uppercase">
               <Building2 className="w-5 h-5" />
-              <span>Trusted Banking Partners</span>
+              <span>Industries We Serve</span>
             </div>
-            <h3 className="font-display font-black text-2xl sm:text-3xl text-dark-navy">Integrations & Trust</h3>
+            <h3 className="font-display font-black text-2xl sm:text-3xl text-dark-navy">Trusted Across Every Sector</h3>
+            <p className="text-text-secondary text-sm sm:text-base max-w-xl mx-auto">
+              From Government Departments and Financial Institutions to Healthcare and Retail — we deliver tailored digital solutions across every industry.
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-stretch">
-            {bankingPartners.map((bank, idx) => (
-              <div
-                key={idx}
-                className="w-full h-44 cursor-pointer"
-                style={{ perspective: '1000px' }}
-              >
-                <motion.div
-                  className="relative w-full h-full text-center"
-                  style={{ transformStyle: 'preserve-3d' }}
-                  whileHover={{ rotateY: 180 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
-                  {/* Front Side */}
-                  <div
-                    className="absolute inset-0 w-full h-full bg-white rounded-xl p-4 border border-slate-200/50 shadow-sm flex flex-col items-center justify-center"
-                    style={{ backfaceVisibility: 'hidden' }}
-                  >
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${bank.color} text-white font-display font-black text-xs flex items-center justify-center shadow-md flex-shrink-0 mb-3`}>
-                      {bank.short}
-                    </div>
-                    <h4 className="font-display font-black text-xs text-dark-navy tracking-wide leading-snug">
-                      {bank.name}
-                    </h4>
-                    <p className="text-[9px] text-text-secondary mt-1 font-bold tracking-wider uppercase">
-                      API Node
-                    </p>
-                  </div>
-
-                  {/* Back Side */}
-                  <div
-                    className="absolute inset-0 w-full h-full bg-dark-navy text-white rounded-xl p-4 border border-slate-800 shadow-lg flex flex-col items-center justify-center"
-                    style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-                  >
-                    <span className="text-primary font-bold text-[9px] tracking-wider uppercase mb-1">Status</span>
-                    <h4 className="font-display font-bold text-xs text-green-400 uppercase tracking-wide">
-                      API Active
-                    </h4>
-                    <div className="w-8 h-0.5 bg-primary/20 my-2" />
-                    <p className="text-[9px] text-slate-400 leading-normal">
-                      PCI DSS Secure <br />
-                      Real-time Querying
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Certifications Showcase */}
-        <section className="text-left">
-          <div className="max-w-3xl mb-12 space-y-4">
-
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-dark-navy">
-              Certifications & Security Standards
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, idx) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: 'Government Departments', icon: '🏛️' },
+              { name: 'Banking & Financial Services', icon: '🏦' },
+              { name: 'Healthcare', icon: '🏥' },
+              { name: 'Education', icon: '🎓' },
+              { name: 'Retail & E-Commerce', icon: '🛒' },
+              { name: 'Hospitality', icon: '🏨' },
+              { name: 'Manufacturing', icon: '🏭' },
+              { name: 'Logistics & Transportation', icon: '🚛' },
+              { name: 'Real Estate', icon: '🏢' },
+              { name: 'Small & Medium Enterprises', icon: '💼' }
+            ].map((industry, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -5, scale: 1.02, borderColor: "rgba(255,107,0,0.2)", boxShadow: "0 12px 24px rgba(255,107,0,0.06)" }}
-                whileTap={{ scale: 0.99 }}
-                className="bg-white rounded-xl2 p-6 border border-bg-alt shadow-sm transition-all duration-300 cursor-pointer"
+                whileHover={{ y: -5, scale: 1.03, borderColor: 'rgba(255,107,0,0.25)', boxShadow: '0 12px 24px rgba(255,107,0,0.08)' }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white rounded-xl p-5 border border-slate-200/50 shadow-sm transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-2 text-center"
               >
-                <div className="flex items-center space-x-3 text-primary mb-3">
-                  <ShieldCheck className="w-6 h-6 flex-shrink-0" />
-                  <span className="font-display font-bold text-lg text-dark-navy">{cert.name}</span>
-                </div>
-                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">{cert.desc}</p>
+                <span className="text-3xl">{industry.icon}</span>
+                <h4 className="font-display font-bold text-xs sm:text-sm text-dark-navy leading-snug">{industry.name}</h4>
               </motion.div>
             ))}
           </div>
